@@ -1,0 +1,47 @@
+*, *:after, *:before {
+  @include box-sizing(border-box);
+}
+
+body {font-family: $f-proxima;font-size: 16px;overflow-x: hidden;}
+#footer {border-top: 1px solid #efefef;padding-top: 40px;}
+
+.auth_wrapper {
+  height: 100%;right: -280px;width: 280px;background: #f6f7f7;transition: right 0.3s ease-in-out;position: absolute;top: 0;z-index: 2;
+  &.show {right: 0;}
+  .close {
+    position: absolute;right: 40px;top: 40px;width: 38px;height: 38px;
+    &:after {
+      content: "";position: absolute;@include icons-sprite(close-ico);left: 50%;top: 50%;margin-left: -10px;margin-top: -10px;
+    }
+  }
+}
+.lang-switcher {
+  position: absolute;right: 85px;top: 40px;
+  a {
+    display: inline-block;height: 38px;line-height: 38px;opacity: 0.5;font-size: 15px;color: #fff;width: 38px;text-align: center;
+    &:hover {opacity: 1;}
+  }
+}
+header {position: absolute;left: 0;right: 0;top: 0;height: 100px;z-index: 1;}
+.logo {
+  padding: 45px 0 0 40px;float: left;
+}
+.login {
+  position: absolute;right: 40px;top: 40px;text-indent: -9999px;overflow: hidden;width: 38px;height: 38px;opacity: 0.5;
+  &:hover {opacity: 1;}
+  &:after {
+    content: "";
+    position: absolute;@include icons-sprite(login-ico);top: 50%;left: 50%;margin-left: -10px;margin-top: -8px;
+  }
+}
+.nav {
+  float: right;padding-right: 170px;padding-top: 40px;
+  li {
+    margin-left: 50px;position: relative;display: inline-block;
+    &:first-child {margin-left: 0;}
+  }
+  a {
+    color: #fff;text-decoration: none;font-size: 15px;height: 38px;line-height: 38px;display: inline-block;
+  }
+  .submenu {display: none;position: absolute;}
+}
