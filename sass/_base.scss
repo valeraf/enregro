@@ -5,13 +5,18 @@
 body {font-family: $f-proxima;font-size: 16px;overflow-x: hidden;}
 #footer {border-top: 1px solid #efefef;padding-top: 40px;}
 
+a {transition: all 0.2s ease-in-out;}
+
 .auth_wrapper {
   height: 100%;right: -280px;width: 280px;background: #f6f7f7;transition: right 0.3s ease-in-out;position: absolute;top: 0;z-index: 2;
   &.show {right: 0;}
   .close {
     position: absolute;right: 40px;top: 40px;width: 38px;height: 38px;
     &:after {
-      content: "";position: absolute;@include icons-sprite(close-ico);left: 50%;top: 50%;margin-left: -10px;margin-top: -10px;
+      content: "";position: absolute;@include retina-sprite(close-ico);left: 50%;top: 50%;margin-left: -10px;margin-top: -10px;transition: all 0.3s ease-in-out;
+    }
+    &:hover:after {
+      @include rotate(180deg);
     }
   }
 }
@@ -22,7 +27,7 @@ body {font-family: $f-proxima;font-size: 16px;overflow-x: hidden;}
     &:hover {opacity: 1;}
   }
 }
-header {position: absolute;left: 0;right: 0;top: 0;height: 100px;z-index: 1;}
+header {position: absolute;left: 0;right: 0;top: 0;height: 100px;z-index: 2;}
 .logo {
   padding: 45px 0 0 40px;float: left;
 }
@@ -31,7 +36,7 @@ header {position: absolute;left: 0;right: 0;top: 0;height: 100px;z-index: 1;}
   &:hover {opacity: 1;}
   &:after {
     content: "";
-    position: absolute;@include icons-sprite(login-ico);top: 50%;left: 50%;margin-left: -10px;margin-top: -8px;
+    position: absolute;top: 50%;left: 50%;margin-left: -10px;margin-top: -8px;@include retina-sprite(login-ico);
   }
 }
 .nav {
@@ -44,4 +49,41 @@ header {position: absolute;left: 0;right: 0;top: 0;height: 100px;z-index: 1;}
     color: #fff;text-decoration: none;font-size: 15px;height: 38px;line-height: 38px;display: inline-block;
   }
   .submenu {display: none;position: absolute;}
+}
+
+#footer {
+  padding: 40px 40px 0 40px;position: relative;
+  .f-social {
+    float: right;width: 220px;
+    a {
+      display: inline-block;margin-right: 10px;opacity: 0.5;
+      &:hover {opacity: 1;}
+    }
+    a.fb {@include retina-sprite(fb-ico);}
+    a.tw {@include retina-sprite(twitter-logo);}
+    a.gplus {@include retina-sprite(google-ico);}
+  }
+  .f-left {
+    float: left;
+    p {color: #adadad;font-size: 14px;line-height: 25px;}
+  }
+  .f-logo {margin-bottom: 25px;}
+  .f-right {
+    float: right;width: 480px;
+    .f-contact {
+      float: left;width: 50%;color: #adadad;font-size: 14px;line-height: 25px;
+      .f-contact__title {font-weight: bold;font-size: 24px;text-transform: uppercase;margin-bottom: 16px;color: #333;}
+    }
+  }
+  .f-bottom {
+    clear: both;padding-top: 15px;
+    .copy {float: left;font-size: 12px;color: #adadad;}
+  }
+  .developer {
+    position: absolute;right: 40px;bottom: 30px;
+    a {
+      display: inline-block;@include retina-sprite(dev-logo);opacity: 0.5;
+      &:hover {opacity: 1;transform: rotateY(180deg);}
+    }
+  }
 }

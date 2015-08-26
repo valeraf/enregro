@@ -24,3 +24,6 @@ $icons-sprite-dimensions: true;
 $icons-layout: smart;
 $icons-spacing: 5px;
 @import "icons/*.png";
+
+$sprites: sprite-map("icons/*.png");            // import 1x sprites
+$sprites2x: sprite-map("icons2x/*.png");   // import 2x sprites
