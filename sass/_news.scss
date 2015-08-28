@@ -1,0 +1,19 @@
+.news {
+  background: url(../img/bg/news-bg.jpg) center 0 no-repeat fixed #fff;background-size: 100% auto;
+  header {position: static;}
+  .nav {
+    .active {
+      & > a {border-color: #fff;}
+    }
+  }
+}
+
+.content {
+  .news-list {
+    padding: 0;margin: 0;
+    li {
+      padding: 0;margin-top: 0;margin-bottom: 55px;display: inline-block;float: none;vertical-align: top;padding-right: 30px;
+      &:after {display: none;}
+    }
+  }
+}

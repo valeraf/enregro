@@ -1,3 +1,6 @@
+.homepage {
+  header {position: absolute;left: 0;right: 0;top: 0;height: 100px;z-index: 2;}
+}
 .main_slider {
   height: 100%;
   .main_carousel {
@@ -38,7 +41,7 @@
 }
 
 .categ_menu {
-  position: absolute;left: 0;bottom: 0;right: 0;height: 68px;z-index: 2;
+  position: absolute;left: 0;bottom: 0;right: 0;height: 68px;z-index: 1;
   ul {
     display: block;overflow: hidden;height: 100%;
     li {
@@ -137,13 +140,7 @@
       margin-bottom: 50px;
     }
   }
-  .news-img {margin-bottom: 20px;}
-  .news-text {font-weight: 300;font-size: 13px;line-height: 21px;margin-bottom: 10px;}
-  .news-date {color: #b7b7b7;font-size: 13px;margin-bottom: 12px;}
-  .news-link a{
-    color: #6d9adc;font-size: 14px;line-height: 21px;border-bottom: 1px solid #e0e8f7;text-decoration: none;
-    &:hover {color: #eb8500;border-color: #eb8500;}
-  }
+  
   .new-list-wrapper {margin: 0 40px;overflow-x: auto;}
   .jspTrack {background: #ededed;height: 1px;}
   .jspHorizontalBar {background: none;}

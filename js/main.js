@@ -12,13 +12,22 @@
     },
     bind: function(){
       var me = this;
-      $('.login').click(function(){
-        app.showAuth();
+      $('.login, .reg_login').click(function(){
+        app.showAuth($('.auth_wrapper'));
+        $('.auth-overlay').fadeIn();
         return false;
       });
-      $('.auth_wrapper').click(function(){
-        app.hideAuth();
+      $('.auth_wrapper .close, .auth-overlay').click(function(){
+        app.hideAuth($('.auth_wrapper'));
+        $('.auth-overlay').fadeOut();
         return false;
+      });
+      $('.contacts').click(function(){
+        app.showAuth($('#contacts'));
+        return false;
+      });
+      $('#contacts .close').click(function(){
+        app.hideAuth($('#contacts'));
       });
       $(".main_carousel, .solutions_carousel").owlCarousel({
         loop:false,
@@ -36,6 +45,8 @@
           app.newsListItemWidth(4);
         }, 400);
       });
+
+      setTimeout(function(){$('#news > .va-middle').addClass('va-middle-table');}, 300);
     },
     resizeSlide : function(){
       $(window).resize(function(){
@@ -83,19 +94,21 @@
     newsListItemWidth: function(visibleItems){
       var d = visibleItems ? visibleItems : 4;
       var w = $('.new-list-wrapper').width()/d;
-      $('.news-list li').width( w-40 );
-      $('.news-list').width($('.news-list li').length*w);
-    },
-    showAuth: function(){
-      if($('.auth_wrapper').hasClass('show')){
-        this.hideAuth();
-      }else{
-        $('.auth_wrapper').addClass('show');
+      if ($('.new-list-wrapper').length > 0){
+        $('.news-list li').width( w-40 );
+        $('.news-list').width($('.news-list li').length*w);
       }
     },
-    hideAuth: function(){
-      $('.auth_wrapper').removeClass('show');
-    }
+    showAuth: function($element){
+      if($element.hasClass('show')){
+        this.hideAuth();
+      }else{
+        $element.addClass('show');
+      }
+    },
+    hideAuth: function($element){
+      $element.removeClass('show');
+    },
   };
 
   app.init();
