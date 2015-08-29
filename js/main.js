@@ -9,6 +9,7 @@
       this.bind();
       this.clickSlideNav();
       this.scrollSwitchSlideNav();
+      this.checkpoints();
     },
     bind: function(){
       var me = this;
@@ -103,6 +104,33 @@
           }
         });
       });
+    },
+    checkpoints: function(){
+      $('.first-checkpoint').hover(
+        function () {
+          this.setAttribute('transform', 'translate(105, 100), scale(.04)')
+        },
+        function () {
+          this.setAttribute('transform', 'translate(115, 110), scale(.03)')
+        }
+      )
+
+      $('.second-checkpoint').hover(
+        function () {
+          this.setAttribute('transform', 'translate(40, 132), scale(.04)')
+        },
+        function () {
+          this.setAttribute('transform', 'translate(50, 142), scale(.03)')
+        }
+      )
+
+      $('.first-checkpoint').click(function(){
+        console.log('first clicked')
+      })
+
+      $('.second-checkpoint').click(function(){
+        console.log('second clicked')
+      })
     },
     newsListItemWidth: function(visibleItems){
       var d = visibleItems ? visibleItems : 4;
