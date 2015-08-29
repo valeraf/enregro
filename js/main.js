@@ -57,6 +57,10 @@
         return false;
       });
 
+      $('.catalog_search').click(function(){
+        app.showSearchForm();
+      });
+
       $('.how-to_country').on('change', app.enableSelect);
 
       setTimeout(function(){$('#news > .va-middle').addClass('va-middle-table');}, 300);
@@ -133,6 +137,11 @@
         $('.how-to_city').removeAttr('disabled');
       }else{
         $('.how-to_city').attr('disabled','disabled');
+      }
+    },
+    showSearchForm: function(){
+      if(!$('.catalog_search').hasClass('active')){
+        $('.catalog_search').addClass('active')
       }
     }
   };
