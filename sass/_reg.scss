@@ -3,12 +3,6 @@
   .nav, .lang-switcher {
     a {color: #222;}
   }
-  .login {
-    opacity: 1;
-    &:after {
-      @include retina-sprite(login-orange);
-    }
-  }
 }
 .registration {
   max-width: 940px;margin: 0 auto;overflow: hidden;padding-top: 40px;
@@ -35,7 +29,7 @@
   .reg-input, .reg-textarea {
     background: #eaecec;border: 3px solid transparent;width: 300px;padding-left: 10px;font-weight: 600;font-size: 16px;
     &:focus {border-color: #cccccc}
-    &.error {border-color: #eb8500;}
+    &.error {border-color: $orange;}
   }
   .reg-textarea {height: 100px;padding-top: 5px;}
 }
@@ -47,5 +41,5 @@
   }
 }
 .reg-btn {
-  button {width: 300px;background: #eb8500;color: #fff;border: none;font-weight: 600;text-align: center;height: 34px;}
+  button {width: 300px;background: $orange;color: #fff;border: none;font-weight: 600;text-align: center;height: 34px;}
 }

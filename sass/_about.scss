@@ -7,7 +7,7 @@
   h1 {
     font-weight: bold;font-family: $f-exo;color: #eadccb;margin: 0 0 40px;position: relative;font-size: 70px;line-height: 1;
     &:after {
-      content: "";position: absolute;width: 70px;height: 2px;background: #eb8500;left: 50%;margin-left: -35px;bottom: -20px;
+      content: "";position: absolute;width: 70px;height: 2px;background: $orange;left: 50%;margin-left: -35px;bottom: -20px;
     }
   }
   .subheading {font-size: 18px;line-height: 30px;color: #fff;max-width: 780px;margin: 0 auto}

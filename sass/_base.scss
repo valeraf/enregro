@@ -41,7 +41,7 @@ a {transition: all 0.2s ease-in-out;}
   .reg_block {
     text-align: center;font-weight: 300;color: #9e9e9e;font-size: 13px;line-height: 18px;
     p {margin-bottom: 15px;}
-    .reg_btn {display: inline-block;width: 220px;height: 33px;line-height: 33px;font-weight: bold;font-size: 16px;background: #eb8500;text-decoration: none;color: #fff;}
+    .reg_btn {display: inline-block;width: 220px;height: 33px;line-height: 33px;font-weight: bold;font-size: 16px;background: $orange;text-decoration: none;color: #fff;}
   }
 }
 .auth-overlay {position: absolute;left: 0;top: 0;width: 100%;height: 100%;z-index: 2;opacity: 0.1;background: #fff;display: none;}
@@ -58,10 +58,15 @@ header {height: 100px;z-index: 2;}
 }
 .login {
   position: absolute;right: 40px;top: 40px;text-indent: -9999px;overflow: hidden;width: 38px;height: 38px;opacity: 0.5;
-  &:hover {opacity: 1;}
+  &:hover {
+    opacity: 1;
+    &:after {
+      @include retina-sprite(login-orange);
+    }
+  }
   &:after {
     content: "";
-    position: absolute;top: 50%;left: 50%;margin-left: -10px;margin-top: -8px;@include retina-sprite(login-ico);
+    position: absolute;top: 50%;left: 50%;margin-left: -10px;margin-top: -8px;@include retina-sprite(login-black);
   }
 }
 .nav {
@@ -160,7 +165,7 @@ header {height: 100px;z-index: 2;}
 .news-date {color: #b7b7b7;font-size: 13px;margin-bottom: 12px;}
 .news-link a{
   color: #6d9adc;font-size: 14px;line-height: 21px;border-bottom: 1px solid #e0e8f7;text-decoration: none;
-  &:hover {color: #eb8500;border-color: #eb8500;}
+  &:hover {color: $orange;border-color: $orange;}
 }
 
 .container {max-width: 960px;margin: 0 auto;clear: both;}
@@ -180,14 +185,17 @@ header {height: 100px;z-index: 2;}
     &:hover {color: #333;}
   }
 }
-.content {
-  p {color: #333;font-size: 15px;line-height: 24px;margin-bottom: 20px;}
+@mixin conten-list{
   ul {
     padding-left: 35px;margin-bottom: 35px;
     li {
       padding-left: 20px;color: #888;font-size: 15px;margin-top: 15px;position: relative;
-      &:after {content: "";position: absolute;left: 0;top: 3px;width: 9px;height: 9px;border-radius: 50%;border: 3px solid #eb8500;}
+      &:after {content: "";position: absolute;left: 0;top: 3px;width: 9px;height: 9px;border-radius: 50%;border: 3px solid $orange;}
       &:first-child {margin-top: 0;}
     }
   }
+}
+.content {
+  p {color: #333;font-size: 15px;line-height: 24px;margin-bottom: 20px;}
+  @include conten-list;
 }

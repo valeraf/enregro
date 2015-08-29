@@ -35,6 +35,12 @@
         nav:false,
         items: 1
       });
+      $('.product_images ul').owlCarousel({
+        loop:false,
+        margin:0,
+        nav:true,
+        items: 1
+      });
       $('.new-list-wrapper').jScrollPane({
         autoReinitialise: true
       });
@@ -45,6 +51,13 @@
           app.newsListItemWidth(4);
         }, 400);
       });
+
+      $('body').on('click','.product_tabs_nav a', function(){
+        app.switchTab($(this));
+        return false;
+      });
+
+      $('.how-to_country').on('change', app.enableSelect);
 
       setTimeout(function(){$('#news > .va-middle').addClass('va-middle-table');}, 300);
     },
@@ -109,6 +122,19 @@
     hideAuth: function($element){
       $element.removeClass('show');
     },
+    switchTab: function($element){
+      $('.product_tabs_nav a').removeClass('active')
+      $element.addClass('active');
+      $('.product_tabs_content_item').hide()
+      $("[data-content="+$element.attr('href').replace('#', '')+"]").show();
+    },
+    enableSelect: function(){
+      if($('.how-to_country').val().length > 0){
+        $('.how-to_city').removeAttr('disabled');
+      }else{
+        $('.how-to_city').attr('disabled','disabled');
+      }
+    }
   };
 
   app.init();
