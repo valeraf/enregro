@@ -52,12 +52,57 @@ a {transition: all 0.2s ease-in-out;}
     &:hover {opacity: 1;}
   }
 }
+.top-menu-wrapper {
+  padding-top: 120px;
+  @include bp(max-width, 1024px){
+    display: none;left: 0;right: 0;top: 0;width: 100%;position: fixed;z-index: 10;background: #fff;text-align: center;
+    .lang-switcher {
+      position: static;display: block;text-align: center;
+      a {color: #333;opacity: 1;text-decoration: none;}
+    }
+    .nav {
+      padding: 0;float: none;margin-bottom: 12px;
+      li {
+        display: block;float: none;text-align: center;margin: 0;
+        a {color: #333;}
+      }
+    }
+    .login {
+      text-indent: 0;position: static;width: auto;height: auto;text-decoration: none;color: #333;opacity: 1;
+      &:after {display: none;}
+    }
+  }
+}
+.togle-menu {
+  display: none;position: fixed;z-index: 11;width: 36px;height: 36px;border-radius: 50%;right: 40px;top: 40px;background: #fff;
+
+  &:after, &:before {
+    content: "";position: absolute;width: 18px;height: 2px;background: #000;left: 50%;margin-left: -9px;
+  }
+  &:after {top: 13px;}
+  &:before {top: 21px;}
+  @include bp(max-width, 1024px){
+    display: block;cursor: pointer;
+    &.active {
+      transform: rotate(45deg);
+      &:after, &:before {
+        background: #000;
+      }
+      &:after {width: 2px;height: 18px;top: 50%;margin-top: -9px;margin-left: -1px;}
+      &:before {width: 18px;height: 2px;top: 50%;margin-top: -1px;margin-left: -9px;}
+    }
+  }
+}
 header {height: 100px;z-index: 2;}
 .logo {
   margin: 45px 0 0 40px;float: left;
   @include bp(max-width, 767px){
     img {display: none;}
     @include retina-sprite(mobile-logo);
+    &.active {
+      margin: 40px 0 0 0;position: fixed;left: 0;right: 0;top: 0;width: 100%;text-align: center;background: none;z-index: 11;
+      img {display: inline;}
+    }
   }
 }
 .login {
@@ -93,6 +138,9 @@ header {height: 100px;z-index: 2;}
   padding: 40px 40px 0 40px;position: relative;
   .f-social {
     float: right;width: 220px;
+    @include bp(max-width, 1024px){
+      float: none;margin: 0 auto 15px;text-align: center;
+    }
     a {
       display: inline-block;margin-right: 10px;opacity: 0.5;
       &:hover {opacity: 1;}
@@ -104,10 +152,22 @@ header {height: 100px;z-index: 2;}
   .f-left {
     float: left;
     p {color: #adadad;font-size: 14px;line-height: 25px;}
+    @include bp(max-width, 1024px){
+      float: none;text-align: center;
+      p {font-size: 15px;}
+    }
   }
-  .f-logo {margin-bottom: 25px;}
+  .f-logo {
+    margin-bottom: 25px;
+    @include bp(max-width, 1024px){
+      display: none;
+    }
+  }
   .f-right {
     float: right;width: 480px;
+    @include bp(max-width, 1060px){
+      display: none;
+    }
     .f-contact {
       float: left;width: 50%;color: #adadad;font-size: 14px;line-height: 25px;
       .f-contact__title {font-weight: bold;font-size: 24px;text-transform: uppercase;margin-bottom: 16px;color: #333;}
@@ -115,10 +175,17 @@ header {height: 100px;z-index: 2;}
   }
   .f-bottom {
     clear: both;padding-top: 15px;
+    @include pie-clearfix;
     .copy {float: left;font-size: 12px;color: #adadad;}
+    @include bp(max-width, 1024px){
+      .copy {float: none;margin: 0 auto 15px;text-align: center;text-transform: uppercase;}
+    }
   }
   .developer {
     position: absolute;right: 40px;bottom: 30px;
+    @include bp(max-width, 1024px){
+      display: none;
+    }
     a {
       display: inline-block;@include retina-sprite(dev-logo);opacity: 0.5;
       &:hover {opacity: 1;transform: rotateY(180deg);}

@@ -1,4 +1,7 @@
 @include sticky-footer(270px, "#root", "#root_footer", "#footer");
+@include bp(max-width, 1024px){
+  @include sticky-footer(180px, "#root", "#root_footer", "#footer");
+}
 
 @font-face {
   font-family: 'proxima';
