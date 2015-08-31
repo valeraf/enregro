@@ -54,7 +54,11 @@ a {transition: all 0.2s ease-in-out;}
 }
 header {height: 100px;z-index: 2;}
 .logo {
-  padding: 45px 0 0 40px;float: left;
+  margin: 45px 0 0 40px;float: left;
+  @include bp(max-width, 767px){
+    img {display: none;}
+    @include retina-sprite(mobile-logo);
+  }
 }
 .login {
   position: absolute;right: 40px;top: 40px;text-indent: -9999px;overflow: hidden;width: 38px;height: 38px;opacity: 0.5;

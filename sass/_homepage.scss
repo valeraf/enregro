@@ -20,6 +20,9 @@
     img {position: absolute;left: 0;right: 0;top: 0;bottom: 0;width: 100%;}
     .slide_text {
       position: absolute;padding-left: 40px;top: 210px;left: 0;width: 535px;color: #fff;font-weight: bold;font-family: $f-exo;
+      @include bp(max-width, 1024px){
+        width: 40%;
+      }
       h1 {margin: 0 0 40px;line-height: 52px;font-size: 48px;}
     }
     .slide_text_right {
@@ -77,7 +80,7 @@
 
 #about {
   .about_right, .about_left {float: left;width: 50%;height: 100%;}
-  .about_right {background: #f6f4f0;position: relative;}
+  .about_right {background: #f6f4f0;position: relative;overflow: hidden}
   .about_left {
     padding-top: 60px;padding-left: 30px;font-family: $f-exo;color: #353535;padding-right: 90px;
     .grey_title {font-size: 17px;color: #989898;margin-bottom: 15px;}

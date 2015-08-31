@@ -8,7 +8,11 @@
 
 .catalog_wrapper {
   padding-bottom: 70px;overflow: hidden;padding-top: 45px;position: relative;
-  h1 {font-family: $f-exo;text-transform: uppercase;font-weight: 600;color: #222;font-size: 36px;line-height: 1;margin-bottom: 90px;text-align: center}
+  h1 {font-family: $f-exo;text-transform: uppercase;font-weight: 600;color: #222;font-size: 36px;line-height: 1;margin-bottom: 90px;text-align: center}  
+}
+.category_inside_menu {
+  padding-top: 45px;
+  h1 {font-family: $f-exo;text-transform: uppercase;font-weight: 600;color: #222;font-size: 36px;line-height: 1;margin-bottom: 35px;text-align: center}  
   .catalog_search {
     position: absolute;right: 40px;top: 80px;overflow: hidden;
     form {position: relative;left: 100%;transition: all 0.3s ease-in-out;}
@@ -127,12 +131,28 @@
 
 .product_wrapper {
   background: #f3f3f3;font-family: $f-anonim;padding: 40px;position: relative;
+  .product_view2 & {padding-top: 0;}
   .product_info_left {padding-top: 50px;overflow: hidden;padding-right: 3%;}
-  .product_info_right {float: right;width: 320px;}
+  .product_info_right {
+    float: right;width: 320px;text-align: center;
+    &.soft {width: 380px;padding-top: 90px;}
+  }
   .product_info_left, .product_info_right {margin-bottom: 35px}
   .container {position: relative;}
   .close {position: absolute;left: 40px;top: 35px;@include retina-sprite(product_close);cursor: pointer;}
   .product_name {font-weight: bold;font-size: 36px;color: #222;margin: 0 0 30px;font-family: $f-proxima;letter-spacing: 0.2em;}
+  .soft-price {letter-spacing: 2px;font-weight: 600;}
+  .download {
+    display: inline-block;padding-right: 30px;font-family: $f-anonim;font-size: 14px;color: #222;position: relative;
+    &:after {content: "";position: absolute;right: 0;top: 50%;margin-top: -8px;@include retina-sprite(download-ico);}
+    a {
+      color: #3081f7;letter-spacing: 1px;text-decoration: none;
+      &:hover {color: $orange;}
+    }
+  }
+  h2 {font-size: 24px;color: #222;line-height: 30px;margin: 0 0 15px;}
+  h3 {font-size: 18px;color: #222;margin: 0 0 15px;line-height: 1;font-weight: bold}
+  p {font-size: 14px;line-height: 21px;letter-spacing: 0;margin-bottom: 20px;color: #949494;}
   .product_tabs {
     .product_tabs_nav {
       margin: 0 0 30px;padding: 0;border-bottom: 1px solid #c7c8c7;
@@ -184,6 +204,7 @@
     }
   }
   .package {
+    text-align: left;
     h2 {font-size: 24px;color: #222;margin-bottom: 15px;}
     .package_list {
       padding-left: 20px;
@@ -229,11 +250,34 @@
 
 .how-to-buy {
   border-top: 1px solid #d7d7d7;padding-top: 20px;background: url(../img/map3.svg) center 0 no-repeat;clear: both;height: 440px;background-size: auto 100%;
+  &.nomap {background: none;}
   h2 {font-size: 24px;color: #222;margin-bottom: 30px;margin-top: 0;}
   p {color: $orange;font-size: 18px;margin-bottom: 95px;font-weight: bold;font-family: $f-proxima;letter-spacing: 0.045em;line-height: 22px;}
   select {
     width: 220px;height: 33px;background: rgba(#fff, 0.7);margin-right: 20px;padding-left: 14px;border: 1px solid #c3c3c3;
     &[disabled="disabled"] {color: #888989;}
   }
+  span {display: inline-block;vertical-align: middle;color: #8c8d8d;}
+  .multiply {vertical-align: middle;margin-right: 16px;}
+  .big-select {width: 320px;}
+  .small-select {width: 60px;}
+  .how-to_row {
+    margin-bottom: 20px;
+  }
+  .add-more {
+    margin-bottom: 25px;
+    a {
+      color: #3081f7;text-decoration: none;
+      &:before {content: "+";font-size: 18px;font-weight: bold;margin-right: 6px;top: -1px;position: relative}
+      &:hover {color: $orange;}
+    }
+  }
+  .order-summary {
+    border-top: 1px solid #d7d7d7;padding-top: 20px;font-weight: bold;margin-bottom: 25px;max-width: 320px;
+    .order {color: #a6a6a6;font-size: 14px;margin-bottom: 5px;}
+    .order-total {padding-top: 5px;font-size: 14px;color: #3c3c3c;}
+  }
   button {height: 33px;border: none;background: $orange;color: #fff;width: 140px;}
 }
+
+.multiply {display: inline-block;@include retina-sprite(multiply-ico);}
