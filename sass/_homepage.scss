@@ -120,6 +120,9 @@
       }
     }
   }
+  .checkpoint {cursor: pointer;}
+  .tooltip {position: absolute;display: none;box-shadow: 0 3px 4px rgba(#000,0.15);background: #fff;border-radius: 4px;font-size: 13px;line-height: 22px;color: #4d4e4f;padding: 15px 20px;}
+  .moscow {}
 }
 
 #solutions {

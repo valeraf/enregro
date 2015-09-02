@@ -8,7 +8,10 @@ body {font-family: $f-proxima;font-size: 16px;overflow-x: hidden;}
 a {transition: all 0.2s ease-in-out;}
 
 .auth_wrapper {
-  height: 100%;right: -280px;width: 280px;background: #f6f7f7;transition: right 0.3s ease-in-out;position: absolute;top: 0;z-index: 3;padding-right: 40px;padding-left: 20px;padding-top: 50px;
+  height: 100%;right: -280px;width: 280px;background: #f6f7f7;transition: right 0.3s ease-in-out;position: absolute;top: 0;z-index: 11;padding-right: 40px;padding-left: 20px;padding-top: 50px;
+  @include bp(max-width, 768px){
+    width: 100%;right: -100%;
+  }
   &.show {right: 0;}
   .close {
     position: absolute;right: 40px;top: 40px;width: 38px;height: 38px;
@@ -24,13 +27,16 @@ a {transition: all 0.2s ease-in-out;}
   }
   .auth_form {
     margin-bottom: 25px;
+    @include bp(max-width, 768px){
+      max-width: 260px;margin: 0 auto;
+    }
     .auth_input {
       background: #e8e9e9;border: none;width: 220px;height: 33px;font-weight: 300;padding-left: 10px;margin-bottom: 30px;border: 3px solid #e8e9e9;font-size: 14px;
       &:focus, &:hover {border-color: #ccc;}
     }
   }
   .btn-set {
-    overflow: hidden;padding-bottom: 20px;border-bottom: 1px solid #e8e9e9;
+    overflow: hidden;padding-bottom: 20px;border-bottom: 1px solid #e8e9e9;max-width: 260px;
     .auth_forgot_pass {float: right;color: #3081f7;font-weight: 300;font-size: 14px;}
     .auth-btn {background: #2b2b2b;color: #fff;font-size: 16px;width: 80px;height: 33px;line-height: 33px;border: none;padding: 0;margin-right: 13px;}
     .auth_remember {
@@ -53,9 +59,10 @@ a {transition: all 0.2s ease-in-out;}
   }
 }
 .top-menu-wrapper {
-  padding-top: 120px;
+  transition: top 0.4s ease-in-out;  
   @include bp(max-width, 1024px){
-    display: none;left: 0;right: 0;top: 0;width: 100%;position: fixed;z-index: 10;background: #fff;text-align: center;
+    left: 0;right: 0;top: -100%;width: 100%;position: fixed;z-index: 10;background: #fff;text-align: center;height: 0;overflow: hidden;height: 100%;
+    &.show {padding-top: 120px;top: 0%;}
     .lang-switcher {
       position: static;display: block;text-align: center;
       a {color: #333;opacity: 1;text-decoration: none;}
@@ -92,16 +99,24 @@ a {transition: all 0.2s ease-in-out;}
       &:before {width: 18px;height: 2px;top: 50%;margin-top: -1px;margin-left: -9px;}
     }
   }
+  @include bp(max-width, 380px){
+    right: 15px;
+  }
 }
 header {height: 100px;z-index: 2;}
 .logo {
   margin: 45px 0 0 40px;float: left;
   @include bp(max-width, 767px){
-    img {display: none;}
+    img {opacity: 0;transition: opacity 0.2s ease-in-out, transform 0.3s ease-in-out;transition-delay: 0.4s;visibility: hidden;transform: translateY(-100px);}
     @include retina-sprite(mobile-logo);
     &.active {
-      margin: 40px 0 0 0;position: fixed;left: 0;right: 0;top: 0;width: 100%;text-align: center;background: none;z-index: 11;
-      img {display: inline;}
+      margin: 40px 0 0 0;position: fixed;left: 0;right: 0;top: 0;width: 100%;text-align: center;background: none;z-index: 11;opacity: 1;
+      img {opacity: 1;visibility: visible;transform: translateY(0);}
+    }
+  }
+  @include bp(max-width, 380px){
+    &.active {
+      img {position: relative;left: -10px;}
     }
   }
 }
@@ -194,7 +209,18 @@ header {height: 100px;z-index: 2;}
 }
 
 #contacts {
-  background: url(../img/bg/contacts-bg.jpg) 0 0 no-repeat #36404f;background-size: 100% auto;position: fixed;left: 0;top: 0;right: 0;bottom: 0;z-index: 10;transition: all 0.5s ease-in-out;transform: translateY(-100%);padding-left: 40px;
+
+  background: #36404f;background-size: 100% auto;position: fixed;left: 0;top: 0;right: 0;bottom: 0;z-index: 10;transition: all 0.5s ease-in-out;transform: translateY(-100%);padding-left: 40px;
+  .contacts_map {
+    position: absolute;left: 0;top: 0;width: 100%;height: 100%;overflow: hidden;
+    svg {
+      transform: translate(0px, -91px);
+      path {opacity: 0.5;}
+      .checkpoint {
+        path {opacity: 1}
+      }
+    }
+  }
   &.show {
     transform: translateY(0);
   }
@@ -207,10 +233,10 @@ header {height: 100px;z-index: 2;}
   }
   h1 {font-weight: bold;color: #eadccb;font-size: 60px;}
   .contacts-info-block {
-    color: #fff;font-size: 15px;line-height: 24px;font-weight: 300;
+    color: #fff;font-size: 15px;line-height: 24px;font-weight: 300;z-index: 1;position: absolute;
     h2 {font-weight: bold;font-size: 24px;color: #eadccb;line-height: 1;margin-bottom: 8px;}
-    &.contacts-au {position: absolute;bottom: 60px;left: 40px;}
-    &.contacts-ru {position: absolute;top: 45%;left: 50%;}
+    &.contacts-au {bottom: 60px;left: 40px;}
+    &.contacts-ru {top: 45%;left: 50%;}
   }
   .contacts-data {
     padding-top: 24px;

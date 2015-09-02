@@ -19,6 +19,7 @@
       this.clickSlideNav();
       this.scrollSwitchSlideNav();
       this.checkpoints();
+      this.categNavUpdate($('.subcategory_list_select'));
     },
     bind: function(){
       var me = this;
@@ -34,6 +35,10 @@
       });
       $('.contacts').click(function(){
         app.showAuth($('#contacts'));
+        setTimeout(function(){
+          app.contactsInfoPosition($('.contacts-ru'), $('.c_first-checkpoint'));
+          app.contactsInfoPosition($('.contacts-au'), $('.c_second-checkpoint'));
+        },500)
         return false;
       });
       $('#contacts .close').click(function(){
@@ -75,9 +80,11 @@
         items: 1
       });
 
-      jspApi = $('.news-list-jsp').jScrollPane({
-        autoReinitialise: true
-      }).data().jsp;
+      if($('.news-list-jsp').length > 0){
+        jspApi = $('.news-list-jsp').jScrollPane({
+          autoReinitialise: true
+        }).data().jsp;
+      }
       
       $(window).resize(function(){
         var t;
@@ -109,9 +116,19 @@
       setTimeout(function(){$('#news > .va-middle').addClass('va-middle-table');}, 300);
       $('<div class="togle-menu">').insertAfter('.top-menu-wrapper');
       $('body').on('click','.togle-menu', function(){
-        $(this).toggleClass('active');
-        $('.top-menu-wrapper').height(window.innerHeight).toggleClass('show').slideToggle();
-        $('.logo').toggleClass('active')
+        if($(this).hasClass('active')){
+          $(this).removeClass('active');
+          $('.top-menu-wrapper').removeClass('show');
+          $('.logo').removeClass('active')
+        }else{
+          $('.top-menu-wrapper').addClass('show');
+          $(this).addClass('active');
+          $('.logo').addClass('active')
+        }
+      });
+
+      $('.package h2').click(function(){
+        app.showMoreOnSmallScreens($(this));
       });
     },
     destroy: function(){
@@ -161,35 +178,44 @@
       });
     },
     checkpoints: function(){
-      $('.first-checkpoint').hover(
-        function () {
-          this.setAttribute('transform', 'translate(105, 100), scale(.04)')
-        },
-        function () {
-          this.setAttribute('transform', 'translate(115, 110), scale(.03)')
-        }
-      )
 
-      $('.second-checkpoint').hover(
-        function () {
-          this.setAttribute('transform', 'translate(40, 132), scale(.04)')
-        },
-        function () {
-          this.setAttribute('transform', 'translate(50, 142), scale(.03)')
-        }
-      )
+      app.showTooltip($('.moscow'), $('.first-checkpoint'));
 
       $('.first-checkpoint').click(function(){
-        console.log('first clicked')
+        $('.second-checkpoint').attr('transform', 'translate(61, 147), scale(.016)');
+        this.setAttribute('transform', 'translate(120, 110), scale(.02)');
+        app.showTooltip($('.moscow'), $(this));
       })
 
       $('.second-checkpoint').click(function(){
-        console.log('second clicked')
-      })
+        $('.first-checkpoint').attr('transform', 'translate(123, 114), scale(.016)');
+        this.setAttribute('transform', 'translate(58, 144), scale(.02)')
+        app.showTooltip($('.austria'), $(this));
+      });
+
+    },
+    showTooltip: function($tooltip, $checkpoint){
+      $('.tooltip').hide();
+      if($checkpoint.is('.second-checkpoint')){
+        $tooltip.css({
+          top: $checkpoint.offset().top + 40,
+          left: $checkpoint.offset().left - $tooltip.outerWidth()/2 + 10
+        }).show();
+      }else{
+        $tooltip.css({
+          top: $checkpoint.offset().top - $tooltip.outerHeight() - 13,
+          left: $checkpoint.offset().left - $tooltip.outerWidth()/2 + 10
+        }).show();
+      }
+    },
+    contactsInfoPosition: function($block, $checkpoint){
+      $block.css({
+        top: $checkpoint.offset().top + 30,
+        left: $checkpoint.offset().left + 40
+      }).show();
     },
     newsListItemWidth: function(visibleItems){
       $('.new-list-wrapper').width(window.innerWidth - 80);
-      console.log(visibleItems);
       var d = visibleItems ? visibleItems : 4;
       var w = $('.new-list-wrapper').width()/d;
       var p = (window.innerWidth > 480) ? 40 : 0;
@@ -209,6 +235,15 @@
       $element.removeClass('show');
     },
     switchTab: function($element){
+      if($(window).width() < 1000){
+        if($(this).hasClass('active') && $('.product_tabs_nav').hasClass('opened')){
+          $('.product_tabs_nav').removeClass('opened')
+        }else if(!$(this).hasClass('active') && $('.product_tabs_nav').hasClass('opened')){
+          $('.product_tabs_nav').removeClass('opened');
+        }else if(!$(this).hasClass('active') && !$('.product_tabs_nav').hasClass('opened')){
+          $('.product_tabs_nav').addClass('opened')
+        }
+      }
       $('.product_tabs_nav a').removeClass('active')
       $element.addClass('active');
       $('.product_tabs_content_item').hide()
@@ -236,6 +271,21 @@
       else if (ratio_cont < ratio_img){
         $img.css({"width": "auto", "height": "100%"});
       }
+    },
+    categNavUpdate: function($wrapper){
+      var $text = $wrapper.find('span'),
+          $select = $wrapper.find('select');
+      $select.on('change', function(){
+        $text.html($("option:selected", this).text());
+        document.location = this.value;
+      });
+    },
+    showMoreOnSmallScreens: function($element){
+      var $target = $element.next();
+      $target.slideToggle('400', function(){
+        $target.removeAttr('style');
+        $target.toggleClass('show');
+      });
     }
   };
 
