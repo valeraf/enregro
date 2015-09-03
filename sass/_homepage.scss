@@ -6,9 +6,6 @@
     }
     &:hover {
       opacity: 1;
-      &:after {
-        @include retina-sprite(login-orange);
-      }
     }
   }
 }
@@ -48,13 +45,24 @@
 }
 
 .slider_btn {font-family: $f-exo;font-size: 14px;letter-spacing: 2.7px;padding: 0 25px;height: 40px;line-height: 36px;border: 2px solid #000;display: inline-block;text-decoration: none;text-transform: uppercase;font-weight: normal}
-.yellow_btn {color: #ebd200;border-color: #ebd200;}
-.white_btn {color: #fff;border-color: #fff;}
+.yellow_btn {
+  color: #ebd200;border-color: #ebd200;
+  &:hover {
+    background: #ebd200;color: #fff;
+  }
+}
+.white_btn {
+  color: #fff;border-color: #fff;
+  &:hover {
+    background: #fff;color: #000;
+  }
+}
 
 .slides_nav {
-  position: fixed;right: 0;top: 50%;transform: translateY(-50%);z-index: 10;
+  position: fixed;right: 0;top: 50%;transform: translateY(-50%);z-index: 100;
   div {
     width: 15px;border-radius: 2px 0 0 2px;background: #fff;opacity: 0.5;transition: all 0.3s ease-in-out;height: 6px;margin-top: 10px;float: right;clear: both;cursor: pointer;
+    &:hover {width: 25px;}
     &:first-child {margin-top: 0;}
     &.active {width: 30px;opacity: 1;}
   }
@@ -122,6 +130,9 @@
   }
   .checkpoint {cursor: pointer;}
   .tooltip {position: absolute;display: none;box-shadow: 0 3px 4px rgba(#000,0.15);background: #fff;border-radius: 4px;font-size: 13px;line-height: 22px;color: #4d4e4f;padding: 15px 20px;}
+  @include bp(max-width, 960px){
+    .tooltip {display: none !important;}
+  }
   .moscow {}
 }
 
@@ -195,6 +206,14 @@
 
     .owl-controls {
       position: absolute;left: 40px;top: 150px;z-index: 5;
+      @include bp(orientation, portrait){
+        top: auto;bottom: 35px;left: 0;right: 0;text-align: center;
+        .owl-dots {display: inline-block;}
+      }
+      @include bp(max-width, 991px){
+        top: auto;bottom: 35px;left: 0;right: 0;text-align: center;
+        .owl-dots {display: inline-block;}
+      }
       .owl-dot {
         width: 7px;height: 7px;border-radius: 50%;border: 1px solid #fff;opacity: 0.5;margin-right: 15px;float: left;
         &.active {background: #fff;opacity: 1;}
@@ -264,6 +283,9 @@
 
 #partners {
   padding: 55px 40px 0;
+  @include bp(max-width, 900px){
+    height: auto !important;
+  }
   h1 {text-align: center;font-family: $f-exo;color: #272d3a;font-size: 36px;margin-bottom: 15px;}
   p {text-align: center;font-size: 13px;color: #9b9c9e;line-height: 24px;}
   .partners_list {
