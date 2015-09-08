@@ -40,10 +40,16 @@
           app.contactsInfoPosition($('.contacts-ru'), $('.c_first-checkpoint'));
           app.contactsInfoPosition($('.contacts-au'), $('.c_second-checkpoint'));
         },500)
+        if((window.innerWidth < 768 || window.innerHeight < 768) && !$('html').hasClass('hide-scroll')){
+          $('html').addClass('hide-scroll');
+        }else if((window.innerWidth > 768 || window.innerHeight > 768)){
+          $('html').removeClass('hide-scroll');
+        }
         return false;
       });
       $('#contacts .close').click(function(){
         app.hideAuth($('#contacts'));
+        $('html').removeClass('hide-scroll');
       });
       var owl = $(".main_carousel, .solutions_carousel");
       owl.on('initialized.owl.carousel change.owl.carousel changed.owl.carousel', function(e) { 
