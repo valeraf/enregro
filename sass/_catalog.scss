@@ -254,7 +254,7 @@
   .product_info_left, .product_info_right {margin-bottom: 35px}
   .container {position: relative;}
   .close {
-    position: absolute;left: 40px;top: 35px;@include retina-sprite(product_close);cursor: pointer;transition: all 0.2s ease-in-out;transform: rotate(0deg);
+    position: absolute;left: 40px;top: 35px;@include retina-sprite(product_close);cursor: pointer;transition: all 0.2s ease-in-out;transform: rotate(0deg);z-index: 10;
     &:hover {
       transform: rotate(180deg);
     }

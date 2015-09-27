@@ -42,7 +42,7 @@ a {transition: all 0.2s ease-in-out;}
       @include bp(max-width, 768px){
         width: 260px;
       }
-      &:focus, &:hover {border-color: #ccc;}
+      &:focus, &:hover {border-color: #ccc;outline: none;}
     }
   }
   .btn-set {
@@ -170,7 +170,10 @@ header {height: 100px;z-index: 2;}
       .catalog & > a {border-color: #5d5d5d}
     }
     &:hover {
-      .submenu {display: block;}
+      .submenu {
+        display: block;
+        .catalog & {background: #F7F9F8;}
+      }
       @include bp(max-width, 1024px){
         .submenu {display: none;}
       }
