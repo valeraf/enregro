@@ -31,7 +31,7 @@
   label {font-weight: 600;font-size: 16px;color: #666;display: block;margin-bottom: 5px}
   .reg-input, .reg-textarea {
     background: #eaecec;border: 3px solid transparent;width: 300px;padding-left: 10px;font-weight: 600;font-size: 16px;
-    &:focus {border-color: #cccccc}
+    &:focus {border-color: $orange}
     &.error {border-color: $orange;}
   }
   .reg-textarea {height: 100px;padding-top: 5px;}
