@@ -4215,6 +4215,7 @@ header {
   border-bottom: 1px solid #dcdcdc;
   font-size: 14px;
   line-height: 18px;
+  width: 50%;
 }
 /* line 392, ../sass/_catalog.scss */
 .specs_table td:first-child {
