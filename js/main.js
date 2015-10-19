@@ -192,7 +192,7 @@
     },
     checkpoints: function(){
       if ($('.checkpoint').length > 0){
-        app.showTooltip($('.moscow'), $('.first-checkpoint'));
+        app.showTooltip($('.austria'), $('.second-checkpoint'));
       }
 
       $('.first-checkpoint').click(function(){

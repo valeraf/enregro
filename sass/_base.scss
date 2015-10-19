@@ -120,7 +120,7 @@ a {transition: all 0.2s ease-in-out;}
   @include bp(max-width, 1024px){
     display: block;cursor: pointer;
     &.active {
-      transform: rotate(45deg);
+      @include transform(rotate(45deg));
       &:after, &:before {
         background: #000;
       }
@@ -140,7 +140,7 @@ header {height: 100px;z-index: 2;}
     @include retina-sprite(mobile-logo);
     &.active {
       margin: 40px auto 0;position: fixed;left: 0;right: 0;top: 0;width: 220px;text-align: center;background: none;z-index: 11;opacity: 1;
-      img {opacity: 1;visibility: visible;transform: translateY(0);}
+      img {opacity: 1;visibility: visible;@include transform(translateY(0));}
     }
   }
   @include bp(max-width, 380px){
@@ -259,14 +259,15 @@ header {height: 100px;z-index: 2;}
     }
     a {
       display: inline-block;@include retina-sprite(dev-logo);opacity: 0.5;
-      &:hover {opacity: 1;transform: rotateY(180deg);}
+      &:hover {opacity: 1;@include transform(rotateY(180deg));}
     }
   }
 }
 
 #contacts {
 
-  background: #36404f;background-size: 100% auto;position: fixed;left: 0;top: 0;right: 0;bottom: 0;z-index: 10;transition: all 0.5s ease-in-out;transform: translateY(-100%);padding-left: 40px;
+  background: #36404f;background-size: 100% auto;position: fixed;left: 0;top: 0;right: 0;bottom: 0;z-index: 10;transition: all 0.5s ease-in-out;
+  @include transform(translateY(-100%));padding-left: 40px;
   @include bp(max-width, 768px){
     overflow-y: auto;
   }
@@ -284,7 +285,7 @@ header {height: 100px;z-index: 2;}
     }
   }
   &.show {
-    transform: translateY(0);
+    @include transform(translateY(0));
   }
   .close {
     position: absolute;right: 200px;top: 50px;width: 35px;height: 35px;cursor: pointer;
@@ -293,7 +294,7 @@ header {height: 100px;z-index: 2;}
       @include rotate(180deg);
     }
     @include bp(max-width, 1024px){
-      transform: rotate(45deg);
+      @include transform(rotate(45deg));
       &:after, &:before {
         background: #eadccb;content: "";position: absolute;transition: all 0.3s ease-in-out;
       }
