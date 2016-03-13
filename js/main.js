@@ -20,7 +20,9 @@
       this.scrollSwitchSlideNav();
       this.checkpoints();
       this.categNavUpdate($('.subcategory_list_select'));
+      this.categNavUpdate($('.mobile-sidenav'));
       this.hideSearchForm();
+      this.sideNavUpdate();
     },
     bind: function(){
       var me = this;
@@ -310,6 +312,11 @@
         $text.html($("option:selected", this).text());
         document.location = this.value;
       });
+    },
+    sideNavUpdate: function(){
+      var el = $('.sidenav').find('li.active a');
+      $('.mobile-sidenav span').text(el.text());
+      $('.mobile-sidenav select').val(el.attr('href'));
     },
     showMoreOnSmallScreens: function($element){
       var $target = $element.next();

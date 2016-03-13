@@ -1,6 +1,9 @@
 .about {
   background: url(../img/bg/about-bg.jpg) center 0 no-repeat fixed #fff;background-size: 100% auto;
   header {position: relative;}
+  @include bp(max-width, 640px){
+    .content_wrapper {padding-left: 15px;padding-right: 15px;}
+  }
 }
 .about-head {
   padding: 80px 0 0 0;text-align: center;height: 370px;
@@ -11,4 +14,12 @@
     }
   }
   .subheading {font-size: 18px;line-height: 30px;color: #fff;max-width: 780px;margin: 0 auto}
+  @include bp(max-width, 768px){
+    padding: 0;height: auto;
+    .subheading {display: none;}
+    h1 {
+      font-size: 24px;
+      &:after {display: none;}
+    }
+  }
 }

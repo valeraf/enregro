@@ -356,7 +356,12 @@ header {height: 100px;z-index: 2;}
 
 .container {max-width: 960px;margin: 0 auto;clear: both;}
 .content_left, .content {padding-top: 40px;}
-.content_left {float: left;width: 170px;}
+.content_left {
+  float: left;width: 170px;
+  @include bp(max-width, 768px){
+    float: none;display: block;width: 100%;
+  }
+}
 .content {
   overflow: hidden;
   a {
@@ -365,12 +370,19 @@ header {height: 100px;z-index: 2;}
   }
   .c-img {
     float: left;margin-right: 20px;margin-bottom: 15px;
+    @include bp(max-width, 768px){
+      float: none;margin: 0 auto 15px;clear: both;display: block;
+    }
     & ~ p {overflow: hidden;}
   }
 }
 .content_wrapper {background: #fff;padding-bottom: 90px;}
 
 .sidenav {
+  @include bp(max-width, 768px){
+    display: none;
+    & + .mobile-sidenav {display: block;}
+  }
   li {line-height: 33px;}
   .active {
     
@@ -380,6 +392,24 @@ header {height: 100px;z-index: 2;}
     display: inline-block;text-decoration: none;color: #8b8b8b;font-size: 15px;padding: 0 10px;height: 27px;line-height: 23px;border: 2px solid transparent;
     &:hover {color: #333;}
   }
+}
+.mobile-sidenav {
+  display: none;max-width: 320px;margin: 0 auto;border: 1px solid #cccccc;font-size: 18px;position: relative;
+  span {
+    display: block;height: 30px;padding-left: 14px;color: #353535;position: relative;line-height: 30px;
+    &:after, &:before {
+      content: "";position: absolute;right: 10px;width: 0;height: 0;border-style: solid;border-width: 7px 6px 0 6px;
+    }
+    &:after {
+      border-color: #000000 transparent transparent transparent;top: 50%;margin-top: -3px;
+      z-index: 1;
+    }
+    &:before {
+      border-color: #ecefee transparent transparent transparent;top: 50%;margin-top: -5px;
+      z-index: 2;
+    }
+  }
+  select {left: 0;position: absolute;right: 0;top: 0;bottom: 0;width: 100%;opacity: 0;z-index: 1;}
 }
 @mixin conten-list{
   ul {
@@ -394,4 +424,7 @@ header {height: 100px;z-index: 2;}
 .content {
   p {color: #333;font-size: 15px;line-height: 24px;margin-bottom: 20px;}
   @include conten-list;
+  @include bp(max-width, 768px){
+    ul {padding-left: 0;margin-bottom: 15px;}
+  }
 }
