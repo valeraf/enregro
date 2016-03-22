@@ -2885,6 +2885,13 @@ header {
   }
 }
 
+@media only screen and (max-width: 768px) {
+  /* line 28, ../sass/_about.scss */
+  .about_page .content {
+    padding: 40px 16px 0;
+  }
+}
+
 /* line 1, ../sass/_news.scss */
 .news {
   background: url(../img/bg/news-bg.jpg) center 0 no-repeat fixed #fff;
@@ -2898,13 +2905,65 @@ header {
 .news .nav .active > a {
   border-color: #fff;
 }
-
+/* line 10, ../sass/_news.scss */
+.news .content .B_crumbBox {
+  color: #b8b9b9;
+}
 /* line 12, ../sass/_news.scss */
+.news .content .B_crumbBox .B_currentCrumb {
+  color: #1e85ce;
+}
+/* line 13, ../sass/_news.scss */
+.news .content .B_crumbBox a {
+  color: #1e85ce;
+}
+@media only screen and (max-width: 768px) {
+  /* line 15, ../sass/_news.scss */
+  .news .content .B_crumbBox a {
+    font-size: 12px;
+  }
+}
+/* line 19, ../sass/_news.scss */
+.news .date-news {
+  font-size: 12px;
+  color: #b8b9b9;
+}
+
+/* line 25, ../sass/_news.scss */
+.about_page .her {
+  color: transparent;
+  border: 1px solid #ecefee;
+  border-bottom: none;
+}
+/* line 26, ../sass/_news.scss */
+.about_page .back-link {
+  text-transform: uppercase;
+  color: #eb8500;
+  padding-left: 20px;
+  position: relative;
+  line-height: 13px;
+  font-size: 14px;
+  font-weight: bold;
+  text-decoration: none;
+}
+/* line 28, ../sass/_news.scss */
+.about_page .back-link:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 1px;
+  background: url(../img/back-arrow.svg) 0 0 no-repeat;
+  background-size: cover;
+  width: 7px;
+  height: 13px;
+}
+
+/* line 35, ../sass/_news.scss */
 .content .news-list {
   padding: 0;
   margin: 0;
 }
-/* line 14, ../sass/_news.scss */
+/* line 37, ../sass/_news.scss */
 .content .news-list li {
   padding: 0;
   margin-top: 0;
@@ -2915,25 +2974,25 @@ header {
   padding-right: 30px;
   width: 32%;
 }
-/* line 16, ../sass/_news.scss */
+/* line 39, ../sass/_news.scss */
 .content .news-list li:after {
   display: none;
 }
 @media only screen and (max-width: 640px) {
-  /* line 14, ../sass/_news.scss */
+  /* line 37, ../sass/_news.scss */
   .content .news-list li {
     width: 49%;
     padding: 0 10px;
   }
 }
 @media only screen and (max-width: 640px) {
-  /* line 14, ../sass/_news.scss */
+  /* line 37, ../sass/_news.scss */
   .content .news-list li {
     width: 100%;
     padding: 0;
   }
 }
-/* line 25, ../sass/_news.scss */
+/* line 48, ../sass/_news.scss */
 .content a.back {
   color: #eb8500;
 }

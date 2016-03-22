@@ -6,6 +6,29 @@
       & > a {border-color: #fff;}
     }
   }
+  .content {
+    .B_crumbBox {
+      color: #b8b9b9;
+      .B_currentCrumb {color: #1e85ce;}
+      a {color: #1e85ce;}
+      @include bp(max-width, 768px){
+        a {font-size: 12px;}
+      }
+    }
+  }
+  .date-news {
+    font-size: 12px;color: #b8b9b9;
+  }
+}
+
+.about_page {
+  .her {color: transparent;border: 1px solid #ecefee;border-bottom: none;}
+  .back-link {
+    text-transform: uppercase;color: #eb8500;padding-left: 20px;position: relative;line-height: 13px;font-size: 14px;font-weight: bold;text-decoration: none;
+    &:after {
+      content: "";position: absolute;left: 0;top: 1px;background: url(../img/back-arrow.svg) 0 0 no-repeat;background-size: cover;width: 7px;height: 13px;
+    }
+  }
 }
 
 .content {

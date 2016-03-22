@@ -23,3 +23,11 @@
     }
   }
 }
+
+.about_page {
+  .content {
+    @include bp(max-width, 768px){
+      padding: 40px 16px 0;
+    }
+  }
+}
