@@ -212,16 +212,18 @@
     },
     showTooltip: function($tooltip, $checkpoint){
       $('.tooltip').hide();
-      if($checkpoint.is('.second-checkpoint')){
-        $tooltip.css({
-          top: $checkpoint.offset().top + 50,
-          left: $checkpoint.offset().left - $tooltip.outerWidth()/2 + 10
-        }).show();
-      }else{
-        $tooltip.css({
-          top: $checkpoint.offset().top - $tooltip.outerHeight() - 13,
-          left: $checkpoint.offset().left - $tooltip.outerWidth()/2 + 10
-        }).show();
+      if($checkpoint.length > 0){
+        if($checkpoint.is('.second-checkpoint')){
+          $tooltip.css({
+            top: $checkpoint.offset().top + 50,
+            left: $checkpoint.offset().left - $tooltip.outerWidth()/2 + 10
+          }).show();
+        }else{
+          $tooltip.css({
+            top: $checkpoint.offset().top - $tooltip.outerHeight() - 13,
+            left: $checkpoint.offset().left - $tooltip.outerWidth()/2 + 10
+          }).show();
+        }
       }
     },
     contactsInfoPosition: function($block, $checkpoint){
