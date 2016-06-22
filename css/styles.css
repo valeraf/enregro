@@ -3043,21 +3043,35 @@ header {
   color: #222;
   border-color: #222;
 }
+@media only screen and (max-width: 640px) {
+  /* line 10, ../sass/_reg.scss */
+  .registration .already-reg {
+    float: none;
+    clear: both;
+    margin: 30px 0 0;
+  }
+}
+@media only screen and (max-width: 960px) {
+  /* line 7, ../sass/_reg.scss */
+  .registration {
+    padding: 40px 20px 0;
+  }
+}
 
-/* line 19, ../sass/_reg.scss */
+/* line 25, ../sass/_reg.scss */
 .reg-form {
   overflow: hidden;
   padding-top: 55px;
   padding-bottom: 90px;
 }
 
-/* line 20, ../sass/_reg.scss */
+/* line 26, ../sass/_reg.scss */
 .reg-form_left {
   float: left;
   width: 240px;
   padding-right: 35px;
 }
-/* line 22, ../sass/_reg.scss */
+/* line 28, ../sass/_reg.scss */
 .reg-form_left p {
   font-size: 16px;
   font-weight: 300;
@@ -3065,27 +3079,59 @@ header {
   color: #bcbcbc;
   margin-bottom: 25px;
 }
+@media only screen and (max-width: 768px) {
+  /* line 26, ../sass/_reg.scss */
+  .reg-form_left {
+    width: auto;
+    padding: 0;
+    margin-bottom: 20px;
+    float: none;
+  }
+}
 
-/* line 24, ../sass/_reg.scss */
+/* line 33, ../sass/_reg.scss */
 .reg-form_right {
   overflow: hidden;
 }
 
-/* line 25, ../sass/_reg.scss */
+/* line 34, ../sass/_reg.scss */
 .form-col {
   width: 300px;
   float: left;
 }
-/* line 27, ../sass/_reg.scss */
+/* line 36, ../sass/_reg.scss */
 .form-col + .form-col {
   float: right;
 }
+@media only screen and (max-width: 960px) {
+  /* line 34, ../sass/_reg.scss */
+  .form-col {
+    width: 50%;
+    padding-right: 3%;
+  }
+  /* line 39, ../sass/_reg.scss */
+  .form-col + .form-col {
+    padding-left: 3%;
+    padding-right: 0;
+  }
+}
+@media only screen and (max-width: 480px) {
+  /* line 34, ../sass/_reg.scss */
+  .form-col {
+    width: 100%;
+    padding: 0;
+  }
+  /* line 43, ../sass/_reg.scss */
+  .form-col + .form-col {
+    padding: 0;
+  }
+}
 
-/* line 29, ../sass/_reg.scss */
+/* line 46, ../sass/_reg.scss */
 .f-row {
   margin-bottom: 30px;
 }
-/* line 31, ../sass/_reg.scss */
+/* line 48, ../sass/_reg.scss */
 .f-row label {
   font-weight: 600;
   font-size: 16px;
@@ -3093,7 +3139,7 @@ header {
   display: block;
   margin-bottom: 5px;
 }
-/* line 32, ../sass/_reg.scss */
+/* line 49, ../sass/_reg.scss */
 .f-row .reg-input, .f-row .reg-textarea {
   background: #eaecec;
   border: 3px solid transparent;
@@ -3102,26 +3148,33 @@ header {
   font-weight: 600;
   font-size: 16px;
 }
-/* line 34, ../sass/_reg.scss */
+@media only screen and (max-width: 960px) {
+  /* line 49, ../sass/_reg.scss */
+  .f-row .reg-input, .f-row .reg-textarea {
+    width: 100%;
+    box-sizing: border-box;
+  }
+}
+/* line 54, ../sass/_reg.scss */
 .f-row .reg-input:focus, .f-row .reg-textarea:focus {
   border-color: #eb8500;
 }
-/* line 35, ../sass/_reg.scss */
+/* line 55, ../sass/_reg.scss */
 .f-row .reg-input.error, .f-row .reg-textarea.error {
   border-color: #eb8500;
 }
-/* line 37, ../sass/_reg.scss */
+/* line 57, ../sass/_reg.scss */
 .f-row .reg-textarea {
   height: 100px;
   padding-top: 5px;
 }
 
-/* line 39, ../sass/_reg.scss */
+/* line 59, ../sass/_reg.scss */
 .reg-subscribe {
   clear: both;
   margin-bottom: 40px;
 }
-/* line 41, ../sass/_reg.scss */
+/* line 61, ../sass/_reg.scss */
 .reg-subscribe label {
   font-size: 12px;
   line-height: 18px;
@@ -3130,14 +3183,14 @@ header {
   position: relative;
   display: inline-block;
 }
-/* line 43, ../sass/_reg.scss */
+/* line 63, ../sass/_reg.scss */
 .reg-subscribe label input {
   position: absolute;
   left: 0;
   top: 4px;
 }
 
-/* line 47, ../sass/_reg.scss */
+/* line 67, ../sass/_reg.scss */
 .reg-btn button {
   width: 300px;
   background: #eb8500;
@@ -3148,7 +3201,14 @@ header {
   height: 34px;
   transition: all 0.2s ease-in-out;
 }
-/* line 49, ../sass/_reg.scss */
+@media only screen and (max-width: 480px) {
+  /* line 67, ../sass/_reg.scss */
+  .reg-btn button {
+    width: 100%;
+    box-sizing: border-box;
+  }
+}
+/* line 72, ../sass/_reg.scss */
 .reg-btn button:hover {
   background: #000;
 }

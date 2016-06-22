@@ -13,6 +13,12 @@
       text-decoration: none;border-bottom: 1px dashed #eb8501;color: #eb8501;display: inline-block;
       &:hover {color: #222;border-color: #222}
     }
+    @include bp(max-width, 640px){
+      float: none;clear: both;margin: 30px 0 0;
+    }
+  }
+  @include bp(max-width, 960px){
+    padding: 40px 20px 0;
   }
 }
 
@@ -20,17 +26,31 @@
 .reg-form_left {
   float: left;width: 240px;padding-right: 35px;
   p {font-size: 16px;font-weight: 300;line-height: 24px;color: #bcbcbc;margin-bottom: 25px;}
+  @include bp(max-width, 768px){
+    width: auto;padding: 0;margin-bottom: 20px;float: none;
+  }
 }
 .reg-form_right {overflow: hidden;}
 .form-col {
   width: 300px;float: left;
   & + .form-col {float: right;}
+  @include bp(max-width, 960px){
+    width: 50%;padding-right: 3%;
+    & + .form-col {padding-left: 3%;padding-right: 0}
+  }
+  @include bp(max-width, 480px){
+    width: 100%;padding: 0;
+    & + .form-col {padding: 0;}
+  }
 }
 .f-row {
   margin-bottom: 30px;
   label {font-weight: 600;font-size: 16px;color: #666;display: block;margin-bottom: 5px}
   .reg-input, .reg-textarea {
     background: #eaecec;border: 3px solid transparent;width: 300px;padding-left: 10px;font-weight: 600;font-size: 16px;
+    @include bp(max-width, 960px){
+        width: 100%;box-sizing: border-box;
+    }
     &:focus {border-color: $orange}
     &.error {border-color: $orange;}
   }
@@ -46,6 +66,9 @@
 .reg-btn {
   button {
     width: 300px;background: $orange;color: #fff;border: none;font-weight: 600;text-align: center;height: 34px;transition: all 0.2s ease-in-out;
+    @include bp(max-width, 480px){
+        width: 100%;box-sizing: border-box;
+    }
     &:hover {background: #000;}
   }
 }
