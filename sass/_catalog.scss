@@ -232,6 +232,7 @@
 
 .product_wrapper {
   background: #f3f3f3;font-family: $f-anonim;padding: 40px;position: relative;
+  @include pie-clearfix;
   .product_view2 & {padding-top: 0;}
   .product_info_left {
     padding-top: 50px;overflow: hidden;padding-right: 3%;
