@@ -1,6 +1,6 @@
 .news {
   background: url(../img/bg/news-bg.jpg) center 0 no-repeat fixed #fff;background-size: 100% auto;
-  header {position: static;}
+  header {position: relative;}
   .nav {
     .active {
       & > a {border-color: #fff;}

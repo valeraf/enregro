@@ -2899,7 +2899,7 @@ header {
 }
 /* line 3, ../sass/_news.scss */
 .news header {
-  position: static;
+  position: relative;
 }
 /* line 6, ../sass/_news.scss */
 .news .nav .active > a {
