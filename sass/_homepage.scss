@@ -261,6 +261,7 @@
   @include bp(max-width, 768px){
     height: auto !important;
     padding-bottom: 50px;
+    background-size: cover;
   }
   h1 {font-family: $f-exo;font-size: 40px;line-height: 1;margin-bottom: 15px;color: #fff;}
   p.subheading {color: #ffbf00;font-weight: 300;font-size: 15px;line-height: 26px;}
