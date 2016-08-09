@@ -1,0 +1,278 @@
+ф.nav {
+padding-top: 50px;
+}
+
+.lang-switcher {
+top: 50px;
+}
+
+.login {
+top: 50px;
+}
+
+.user {
+top: 50px;
+}
+
+.date-news {
+color: #c7c7c7;
+}
+
+.her {
+color: #E7E7E7;
+}
+
+.wlpeMessageText {
+color: red;
+padding-bottom: 50px;
+font-weight: 800;
+}
+
+.ditto_currentpage {
+padding-right: 20px;
+}
+
+a.ditto_page {
+padding-right: 20px;
+}
+
+
+.news-list-jsp {height: 250px;}
+
+
+/* --------- Декор восстановления пароля ---------- */
+
+button#wlpeResetButton {
+  height: 33px;
+  border: none;
+  background: #eb8500;
+  color: #fff;
+  width: 140px;
+  transition: all 0.2s ease-in-out;
+}
+
+button#wlpeResetButton:hover {
+  background: #000;
+}
+
+button#wlpeResetCancelButton {
+  height: 33px;
+  border: none;
+  background: #eb8500;
+  color: #fff;
+  width: 140px;
+  transition: all 0.2s ease-in-out;
+}
+
+button#wlpeResetCancelButton:hover {
+  background: #000;
+}
+
+
+input#wlpeResetEmail {
+  background: #e8e9e9;
+  border: none;
+  width: 220px;
+  height: 33px;
+  font-weight: 300;
+  padding-left: 10px;
+  margin-bottom: 30px;
+  border: 3px solid #e8e9e9;
+  font-size: 14px;
+}
+
+fieldset#wlpeResetFieldset {
+border: none;
+}
+
+fieldset#wlpeResetButtonFieldset {
+border: none;
+}
+
+input#wlpeActivationPassword {
+  background: #e8e9e9;
+  border: none;
+  width: 420px;
+  height: 33px;
+  font-weight: 300;
+  padding-left: 10px;
+  margin-bottom: 30px;
+  border: 3px solid #e8e9e9;
+  font-size: 14px;
+  float:none;
+}
+
+input#wlpeNewPassword {
+  background: #e8e9e9;
+  border: none;
+  width: 420px;
+  height: 33px;
+  font-weight: 300;
+  padding-left: 10px;
+  margin-bottom: 30px;
+  border: 3px solid #e8e9e9;
+  font-size: 14px;
+  float:none;
+}
+
+input#wlpeNewPasswordConfirm	{
+  background: #e8e9e9;
+  border: none;
+  width: 420px;
+  height: 33px;
+  font-weight: 300;
+  padding-left: 10px;
+  margin-bottom: 30px;
+  border: 3px solid #e8e9e9;
+  font-size: 14px;
+  float:none;
+}
+
+button#wlpeActivateButton {
+  height: 33px;
+  border: none;
+  background: #eb8500;
+  color: #fff;
+  width: 140px;
+  transition: all 0.2s ease-in-out;
+}
+
+button#wlpeActivateButton:hover {
+  background: #000;
+}	
+
+
+/* ------------ Забыл пароль ------------- */
+
+input#wlpeUsername	{
+  background: #e8e9e9;
+  border: none;
+  width: 220px;
+  height: 33px;
+  font-weight: 300;
+  padding-left: 10px;
+  margin-bottom: 30px;
+  border: 3px solid #e8e9e9;
+  font-size: 14px;
+  float:none;
+}
+
+input#wlpePassword	{
+  background: #e8e9e9;
+  border: none;
+  width: 220px;
+  height: 33px;
+  font-weight: 300;
+  padding-left: 10px;
+  margin-bottom: 30px;
+  border: 3px solid #e8e9e9;
+  font-size: 14px;
+  float:none;
+}
+
+button#wlpeLoginButton {
+  height: 33px;
+  border: none;
+  background: #eb8500;
+  color: #fff;
+  width: 140px;
+  transition: all 0.2s ease-in-out;
+}
+
+button#wlpeLoginButton:hover {
+  background: #000;
+}	
+
+button#wlpeReminderButton {
+  height: 33px;
+  border: none;
+  background: #eb8500;
+  color: #fff;
+  width: 140px;
+  transition: all 0.2s ease-in-out;
+}
+
+button#wlpeReminderButton:hover {
+  background: #000;
+}
+
+
+button#wlpeRegisterButton {
+  height: 33px;
+  border: none;
+  background: #eb8500;
+  color: #fff;
+  width: 140px;
+  transition: all 0.2s ease-in-out;
+}
+
+button#wlpeRegisterButton:hover {
+  background: #000;
+}
+
+fieldset#wlpeLoginFieldset {
+   border: 1px solid #e7e7e7;
+}
+
+fieldset#wlpeLoginButtons {
+   border: none;
+}
+
+select#wlpeStayLoggedIn {
+   border: 1px solid #e7e7e7;
+   height: 33px;
+}
+
+/* --------- Стили для форм ПО ---------- */
+
+.how-to-buy input {
+  width: 220px;
+  height: 33px;
+  background: rgba(255, 255, 255, 0.7);
+  margin-right: 10px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  padding-left: 14px;
+  border: 1px solid #c3c3c3;
+}
+
+.how-to-buy textarea {
+  width: 220px;
+  height: 60px;
+  background: rgba(255, 255, 255, 0.7);
+  margin-right: 20px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  padding-left: 14px;
+  border: 1px solid #c3c3c3;
+}
+
+.how-to-buy .small-input{
+    width: 60px;
+}
+
+#how-to-buy tr {
+height: 43px;
+}
+
+.how-to-buy .btn2 {
+    height: 33px;
+    border: none;
+    background: #eb8500;
+    color: #fff;
+    width: 170px;
+    transition: all 0.2s ease-in-out;
+}
+
+.feedback2 td  {
+width: 50%;
+}
+
+
+
+
+/* --------- Центрируем новости для моб версии ---------- */
+
+@media (max-width: 768px){
+    .news-list .news-item {text-align: center;}
+}
