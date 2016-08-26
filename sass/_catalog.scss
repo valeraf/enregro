@@ -415,7 +415,7 @@
 }
 
 .how-to-buy {
-  border-top: 1px solid #d7d7d7;padding-top: 20px;background: url(../img/map3.svg) center 0 no-repeat;clear: both;height: 440px;background-size: auto 100%;
+  border-top: 1px solid #d7d7d7;padding-top: 20px;background: url(../img/map3.svg) center 0 no-repeat;clear: both;min-height: 440px;background-size: auto 100%;
   &.nomap {background: none;}
   h2 {font-size: 24px;color: #222;margin-bottom: 30px;margin-top: 0;}
   p {color: $orange;font-size: 18px;margin-bottom: 95px;font-weight: bold;font-family: $f-proxima;letter-spacing: 0.045em;line-height: 22px;}
